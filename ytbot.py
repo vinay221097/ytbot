@@ -1,8 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
+
 from time import sleep
 options = Options()
 options.headless = False
+options.setCapability("marionette", False);
 _browser_profile = webdriver.FirefoxProfile()
 _browser_profile.set_preference("dom.webnotifications.enabled", False)
 driver = webdriver.Firefox(options=options,firefox_profile=_browser_profile,executable_path=r'/root/ytbot/geckodriver')
