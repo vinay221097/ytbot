@@ -1,17 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-
 from time import sleep
 options = Options()
-options.headless = True
-cap = DesiredCapabilities().FIREFOX
-cap["marionette"] = False
-from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
-binary = FirefoxBinary('/root/ytbot/geckodriver')
+options.headless = False
 _browser_profile = webdriver.FirefoxProfile()
 _browser_profile.set_preference("dom.webnotifications.enabled", False)
-driver = webdriver.Firefox(capabilities=cap,options=options,firefox_profile=_browser_profile, firefox_binary=binary)
+driver = webdriver.Firefox(options=options,firefox_profile=_browser_profile,executable_path=r'/root/ytbot/geckodriver')
 try:
 	print("loaded")
 	driver.get("https://www.ytmonster.net/campaigns/views")
