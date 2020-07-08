@@ -28,7 +28,8 @@ except Exception as e:
 
 
 def open_new_client():
-	try:		
+	try:
+		sleep(4)		
 		driver.switch_to_window(driver.window_handles[0])
 		client = driver.find_element_by_xpath('/html/body/div[2]/div/div[2]/div[2]/div/div[2]/a[3]')
 		client.click()
@@ -38,7 +39,7 @@ def open_new_client():
 
 def start_watching():
 	try:
-		sleep(2)
+		sleep(5)
 		window_number = len(driver.window_handles)
 		if window_number%2==0:
 			window_number= window_number-1
