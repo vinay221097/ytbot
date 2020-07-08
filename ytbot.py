@@ -7,9 +7,11 @@ options = Options()
 options.headless = True
 cap = DesiredCapabilities().FIREFOX
 cap["marionette"] = False
-_browser_profile = webdriver.FirefoxProfile()
+from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
+binary = FirefoxBinary('path/to/installed firefox binary')
+_browser_profile = webdriver.FirefoxProfile('root/ytbot/geckodriver')
 _browser_profile.set_preference("dom.webnotifications.enabled", False)
-driver = webdriver.Firefox(capabilities=cap,options=options,firefox_profile=_browser_profile, executable_path=r'/root/ytbot/geckodriver')
+driver = webdriver.Firefox(capabilities=cap,options=options,firefox_profile=_browser_profile, firefox_binary=binary)
 try:
 	print("loaded")
 	driver.get("https://www.ytmonster.net/campaigns/views")
