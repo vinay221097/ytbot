@@ -45,6 +45,7 @@ def start_watching():
 		if window_number%2==0:
 			window_number= window_number-1
 		driver.switch_to_window(driver.window_handles[window_number])
+		driver.set_window_size(300,300)
 		sleep(2)
 		startBtn= driver.find_element_by_id('startBtn')
 		startBtn.click()
