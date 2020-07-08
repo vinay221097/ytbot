@@ -3,7 +3,7 @@ from selenium.webdriver.firefox.options import Options
 from pyvirtualdisplay import Display
 
 from time import sleep
-display = Display(visible=0, size=(2500, 1800))
+display = Display(visible=0, size=(800, 600))
 display.start()
 options = Options()
 options.headless = False
