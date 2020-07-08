@@ -41,6 +41,7 @@ def start_watching():
 	try:
 		sleep(5)
 		window_number = len(driver.window_handles)
+		print("window number",window_number)
 		if window_number%2==0:
 			window_number= window_number-1
 		driver.switch_to_window(driver.window_handles[window_number])
