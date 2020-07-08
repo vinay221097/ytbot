@@ -5,7 +5,7 @@ options = Options()
 options.headless = True
 _browser_profile = webdriver.FirefoxProfile()
 _browser_profile.set_preference("dom.webnotifications.enabled", False)
-driver = webdriver.Firefox(options=options,firefox_profile=_browser_profile, executable_path=r'\geckodriver')
+driver = webdriver.Firefox(options=options,firefox_profile=_browser_profile, executable_path=r'geckodriver')
 try:
 	print("loaded")
 	driver.get("https://www.ytmonster.net/campaigns/views")
