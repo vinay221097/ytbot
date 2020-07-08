@@ -51,4 +51,3 @@ def start_watching():
 for i in range(0,3):
 	open_new_client()
 	start_watching()
-driver.quit()
