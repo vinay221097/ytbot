@@ -54,6 +54,6 @@ def start_watching():
 	except Exception as e:
 		print("error ocuured in starting video",e)
 
-for i in range(0,3):
+for i in range(0,1):
 	open_new_client()
 	start_watching()
